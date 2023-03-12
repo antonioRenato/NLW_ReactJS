@@ -1,13 +1,8 @@
-import firebase from 'firebase/app'
-
-import 'firebase/auth';
-import 'firebase/database';
+import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
 // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "firebase/app";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.RECAT_APP_API_KEY,
   authDomain: process.env.RECAT_APP_AUTH_DOMAIN,
@@ -19,7 +14,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
-export const auth = firebase.auth()
-export const database = firebase.database()
+export const auth = getAuth()
+export const database = getDatabase()
