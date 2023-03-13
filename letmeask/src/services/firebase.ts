@@ -1,20 +1,26 @@
-import { getAuth } from 'firebase/auth';
-import { getDatabase } from 'firebase/database';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.RECAT_APP_API_KEY,
-  authDomain: process.env.RECAT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.RECAT_APP_DATABASE_URL,
-  projectId: process.env.RECAT_APP_PROJECT_ID,
-  storageBucket: process.env.RECAT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.RECAT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.RECAT_APP_APP_ID,
+  apiKey: "AIzaSyDUlyzSmt5bBAkXvQ5sMpaV6DcHSmU0QZw",
+  authDomain: "letmeask-95c2d.firebaseapp.com",
+  databaseURL: "https://letmeask-95c2d-default-rtdb.firebaseio.com",
+  projectId: "letmeask-95c2d",
+  storageBucket: "letmeask-95c2d.appspot.com",
+  messagingSenderId: "726755858245",
+  appId: "1:726755858245:web:319a16873a17661908902c"
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth()
-export const database = getDatabase()
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+
+// Initialize Firebase Database and get a reference to the service
+export const database = getDatabase(app);
